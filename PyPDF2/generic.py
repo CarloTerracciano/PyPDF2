@@ -582,9 +582,10 @@ class DictionaryObject(dict, PdfObject):
             if not data.get(key):
                 data[key] = value
             elif pdf.strict:
+                pass
                 # multiple definitions of key not permitted
-                raise utils.PdfReadError("Multiple definitions in dictionary at byte %s for key %s" \
-                                           % (utils.hexStr(stream.tell()), key))
+                #raise utils.PdfReadError("Multiple definitions in dictionary at byte %s for key %s" \
+                #                           % (utils.hexStr(stream.tell()), key))
             else:
                 warnings.warn("Multiple definitions in dictionary at byte %s for key %s" \
                                            % (utils.hexStr(stream.tell()), key), utils.PdfReadWarning)
